@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-sm-3">
+    <h2>Curvas Isometricas </h2>
+    <ul class="curvas">
+      <li *ngFor='let curva of curvas' (click)='onSelect(curva)'>
+        <div>
+          <h3>{{curva.name}}</h3>
+          {{curva.creationDate | date:"medium"}}
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-9">
+    <app-curva-detail [curva]='selectedCurva'></app-curva-detail>
+  </div>
+</div>

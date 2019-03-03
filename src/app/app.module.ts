@@ -3,14 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CurvaComponent } from './curva/curva.component';
+import { CurvaDetailComponent } from './curva-detail/curva-detail.component';
+
+import {PdfViewerModule} from 'ng2-pdf-viewer';
+import {SidebarModule} from 'ng-sidebar';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CurvaComponent,
+    CurvaDetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PdfViewerModule,
+    SidebarModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
