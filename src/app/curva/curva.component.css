@@ -1,0 +1,14 @@
+.curva-btn{
+    background-color: #007bff;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    padding: 5%;
+}
+
+.curva-btn h5{
+    color: whitesmoke;
+}
+
+.curva-btn p{
+    color: whitesmoke;
+}

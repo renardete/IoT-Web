@@ -3,9 +3,9 @@
     <h2>Curvas Isometricas </h2>
     <ul class="curvas">
       <li *ngFor='let curva of curvas' (click)='onSelect(curva)'>
-        <div>
-          <h3>{{curva.name}}</h3>
-          {{curva.creationDate | date:"medium"}}
+        <div class="curva-btn">
+          <h5>{{curva.name}}</h5>
+          <p>{{curva.creationDate | date:"medium"}}</p>
         </div>
       </li>
     </ul>
