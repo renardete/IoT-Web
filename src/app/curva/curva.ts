@@ -3,4 +3,5 @@ export class Curva{
     name: string;
     doc: string;
     creationDate: Date;
+    estate: string;
 }

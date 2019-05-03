@@ -1,13 +1,10 @@
 <div *ngIf='curva'>
-  <h2>{{curva.name | uppercase}}</h2>
-  <div>{{curva.creationDate | date:'medium'}}</div>
+  <h2>Gráfica: {{curva.name | uppercase}}</h2>
+  <div>Hacienda: {{curva.farm }}</div>
   <div style="max-width: 100% !important; max-height: 100% !important;">
-    <pdf-viewer [src]='curva.doc'
-                [render-text]='true'
-                [autoresize]="true"
-                [original-size]="false"
-                [fit-to-page]="true"
-                style="display: block; "
-    ></pdf-viewer>
+    <ngx-extended-pdf-viewer src="{{ profileUrl | async}}"
+     height="75vh" delayFirstView="250" useBrowserLocale="true">
+    </ngx-extended-pdf-viewer>
+    
   </div>
 </div>

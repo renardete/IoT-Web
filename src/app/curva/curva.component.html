@@ -1,16 +1,18 @@
-<div class="row">
-  <div class="col-sm-3">
-    <h2>Curvas Isometricas </h2>
-    <ul class="curvas">
-      <li *ngFor='let curva of curvas' (click)='onSelect(curva)'>
-        <div class="curva-btn">
-          <h5>{{curva.name}}</h5>
-          <p>{{curva.creationDate | date:"medium"}}</p>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="col-sm-9">
-    <app-curva-detail [curva]='selectedCurva'></app-curva-detail>
+<div>
+  <app-curva-form></app-curva-form>
+  <div class="row">
+    <div class="col-sm-3">
+      <h2>Curvas Isometricas </h2>
+      <ul class="curvas">
+        <li *ngFor='let curva of curvas | async' (click)='onSelect(curva)'>
+          <div class="curva-btn">
+            <p>{{curva.name}}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="col-sm-9">
+      <app-curva-detail [curva]='selectedCurva'></app-curva-detail>
+    </div>
   </div>
 </div>
