@@ -1,0 +1,28 @@
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="#"><i class="fas fa-tractor"></i> Mapas de productividad</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse navbar-nav" id="navbarSupportedContent">
+      <div class="form-inline mr-2">
+        <img class="mr-sm-2" src="https://www.icesi.edu.co/launiversidad/images/La_universidad/logo_icesi.png"
+          alt="Smiley face" height="15%" width="15%">
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="" class="text-white" (click)="authService.logout()">Logout</a></li>
+        </ul>
+
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+    <app-curva-form></app-curva-form>
+
+  <app-curva></app-curva>
+
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { AngularFireStorage, AngularFireStorageReference, AngularFireUploadTask } from '@angular/fire/storage';
@@ -10,21 +10,21 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
   templateUrl: './curva-form.component.html',
   styleUrls: ['./curva-form.component.css']
 })
-export class CurvaFormComponent implements OnInit {
+export class CurvaFormComponent implements OnInit, OnChanges, OnDestroy {
 
   ref: AngularFireStorageReference;
   task: AngularFireUploadTask;
   uploadProgress: Observable<number>;
 
   name : string;
-  farm : string; 
+  farm : string;
   file = null;
   constructor(private afStorage: AngularFireStorage, private afs: AngularFirestore) { }
 
   ngOnInit() {
   }
 
-  onSubmit() { 
+  onSubmit() {
     console.log(this.name)
     console.log(this.farm)
     console.log(this.file)
@@ -34,12 +34,12 @@ export class CurvaFormComponent implements OnInit {
    }
 
    ngOnChanges(){
-     console.log(this.uploadProgress)
+     console.log("entra")
    }
 
    updateFilesList(){
-    let curva = {
-      name: this.name, 
+    const curva = {
+      name: this.name,
       farm: this.farm,
       doc: this.file.name
     }
@@ -59,4 +59,7 @@ export class CurvaFormComponent implements OnInit {
     //console.log(event.target.files[0]);
   }
 
+  ngOnDestroy(){
+    console.log('se destruyo')
+  }
 }

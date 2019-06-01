@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Curva } from '../curva/curva';
 import { Observable, concat } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
@@ -9,7 +9,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
   templateUrl: './curva-detail.component.html',
   styleUrls: ['./curva-detail.component.css']
 })
-export class CurvaDetailComponent implements OnInit {
+export class CurvaDetailComponent implements OnInit, OnChanges {
 
   @Input() curva: Curva;
 
@@ -19,7 +19,7 @@ export class CurvaDetailComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
   }
 
   ngOnChanges(){
